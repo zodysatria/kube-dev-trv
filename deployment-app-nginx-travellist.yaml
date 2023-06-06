@@ -5,7 +5,7 @@ metadata:
   namespace: travellist
 spec:
   selector:
-    app: travellist
+    app: travellist-app
   ports:
     - port: 80
       targetPort: 80
@@ -38,12 +38,12 @@ metadata:
   name: app-deployment
   namespace: travellist
   labels:
-    app: travellist
+    app: travellist-app
 spec:
   replicas: 5
   selector:
     matchLabels:
-      app: travellist
+      app: travellist-app
   strategy:       
     type: Recreate
   template:
