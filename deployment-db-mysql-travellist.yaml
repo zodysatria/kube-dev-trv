@@ -5,7 +5,7 @@ metadata:
   namespace: travellist
 spec:
   selector:
-    app: travellist
+    app: travellist-db
   ports:
     - port: 3306
       targetPort: 3306
@@ -45,17 +45,17 @@ metadata:
   name: db-deployment
   namespace: travellist
   labels:
-    app: travellist
+    app: travellist-db
 spec:
   # serviceName: db
   replicas: 5
   selector:
     matchLabels:
-      app: travellist
+      app: travellist-db
   template:
     metadata:
       labels:
-       app: travellist
+       app: travellist-db
     spec:
       containers:
       - name:  travellist
